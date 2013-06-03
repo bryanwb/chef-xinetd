@@ -1,0 +1,12 @@
+service <%= @app_name %>
+{
+        flags           = REUSE
+        socket_type     = stream
+        port            = <%= @port %>
+        wait            = no
+        user            = nobody
+        server          = <%= @server %>
+        log_on_failure  += USERID
+        disable         = no
+        per_source      = UNLIMITED
+}
