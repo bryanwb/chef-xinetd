@@ -1,11 +1,18 @@
 = DESCRIPTION:
-Sets up a basic xinetd configuration
+Sets up a basic xinetd configuration.
 
 = REQUIREMENTS:
-This only works for Enterprise Linux
+Ubuntu 12.04 LTS
 
 = ATTRIBUTES:
 
-
 = USAGE:
-So far as a dependency to the nagios::client_xinetd recipe
+Important! Call 'include_recipe xinetd' before calling the provider!
+
+Example:
+xinetd_service "test" do
+  app_name "test"
+  port "6977"
+  server '/bin/echo Testing'
+  action :add
+end

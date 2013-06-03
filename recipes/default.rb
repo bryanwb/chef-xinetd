@@ -7,10 +7,10 @@
 # Apache 2.0
 #
 
-package "xinetd" do
-	action :install
-end
+package "xinetd"
 
 service "xinetd" do
-	action [:enable,:start]
+  action [ :enable, :start ]
 end
+
+node.default_attrs['xinetd'].delete rescue nil
